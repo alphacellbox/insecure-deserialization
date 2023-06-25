@@ -1,15 +1,8 @@
 package com.example.insecuredeserialization;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.redis.core.RedisTemplate;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.Arrays;
 
 @SpringBootApplication
 public class InsecureDeserializationApplication
@@ -19,7 +12,6 @@ public class InsecureDeserializationApplication
     public static void main(String[] args) {
         SpringApplication.run(InsecureDeserializationApplication.class, args);
     }
-    protected RedisTemplate<Serializable, Serializable> redisTemplate;
    // @Override
 //    public void run(String... args) throws Exception {
 //        System.out.println("kkkkkk");

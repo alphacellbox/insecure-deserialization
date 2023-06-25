@@ -2,22 +2,23 @@ package com.example.insecuredeserialization;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/a")
 @AllArgsConstructor
 public class Controller {
-    protected RedisTemplate<Serializable, Serializable> redisTemplate;
 
 
     @PostMapping("/b")
     public String test(@RequestBody testDTO p) throws IOException, ClassNotFoundException {
+        HashMap<String,String> a=new HashMap<String,String>();
+        a.put("https://www.google.com","https://www.google.com");
 
         System.out.println("kkkkkk");
         String path="C:\\Users\\user1\\Desktop\\jars\\ss.txt";
